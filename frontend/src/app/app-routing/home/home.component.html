@@ -1,20 +1,143 @@
-<div class="container mt-5">
-    <mat-grid-list cols="2" rowHeight="2:1" gutterSize="20" class="full-image">
-        <mat-grid-tile>
-            <div class="full-image" routerLink="employee"> <!-- Change here -->
-                <img src="../../assets/flutter_img.png" style="cursor: pointer;" alt="flutter" class="full-image">
+<div class="container m-5" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+    <div class="row" style="height: 80vh;">
+        <!-- Column for Cards Above Image -->
+        <div class="col-md-6 overflow-auto">
+            <div class="row">
+                <div class="col-md-12 mb-3" routerLink="employee"> <!-- Card 1 -->
+                    <div class="card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="assets/mobile.png" class="img-fluid rounded-start"
+                                    alt="Mobile App Development">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Mobile App Development</h5>
+                                    <p class="card-text">We specialize in crafting seamless and intuitive mobile
+                                        applications, leveraging cutting-edge technology to deliver exceptional user
+                                        experiences. Our expertise ensures robust, scalable solutions tailored to meet
+                                        your unique business needs.</p>
+                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                            ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 mb-3"> <!-- Card 2 -->
+                    <div class="card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="assets/web.png" class="img-fluid rounded-start" alt="Web App Development">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Web App Development</h5>
+                                    <p class="card-text">We deliver dynamic and responsive web applications designed to
+                                        enhance user engagement and drive business growth. Our team excels in creating
+                                        robust, scalable solutions tailored to your specific needs.</p>
+                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                            ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 mb-3"> <!-- Card 3 -->
+                    <div class="card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="assets/backend.png" class="img-fluid rounded-start" alt="Backend Development">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Backend Development</h5>
+                                    <p class="card-text">Our backend development team builds secure and efficient
+                                        server-side solutions that power applications and manage data effectively. We
+                                        focus on scalability and performance to ensure a seamless user experience.</p>
+                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                            ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </mat-grid-tile>
-        <mat-grid-tile>
-            <img src="../../assets/sql_img.png" alt="sql" class="full-image">
-        </mat-grid-tile>
-        <mat-grid-tile>
-            <img src="../../assets/java_img.png" alt="java" class="full-image">
-        </mat-grid-tile>
-        <mat-grid-tile>
-            <img src="../../assets/react_img.png" alt="react" class="full-image">
-        </mat-grid-tile>
-    </mat-grid-list>
+        </div>
+
+        <!-- Column for Image -->
+        <div class="col-md-6 d-flex align-items-center justify-content-center"
+            style="height: 80vh; padding: 0; border-radius: 50px;">
+            <img src="assets/self.jpg" alt="Your Image" style="max-width: 100%; max-height: 100%; object-fit: cover;">
+        </div>
+
+        <!-- Column for Cards Below Image -->
+        <div class="col-md-6 overflow-auto">
+            <div class="row">
+                <div class="col-md-12 mb-3"> <!-- Card 4 -->
+                    <div class="card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="assets/mobile.png" class="img-fluid rounded-start"
+                                    alt="Mobile App Development">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Mobile App Development</h5>
+                                    <p class="card-text">We specialize in crafting seamless and intuitive mobile
+                                        applications, leveraging cutting-edge technology to deliver exceptional user
+                                        experiences. Our expertise ensures robust, scalable solutions tailored to meet
+                                        your unique business needs.</p>
+                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                            ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 mb-3"> <!-- Card 5 -->
+                    <div class="card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="assets/ux.gif" class="img-fluid rounded-start" alt="UI/UX Design">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">UI/UX Design</h5>
+                                    <p class="card-text">Our UI/UX design team crafts intuitive and engaging user
+                                        experiences, focusing on usability and aesthetics. We prioritize user-centric
+                                        designs that enhance interaction and satisfaction.</p>
+                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                            ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 mb-3"> <!-- Card 6 -->
+                    <div class="card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="assets/frontend.gif" class="img-fluid rounded-start"
+                                    alt="Frontend Development">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Frontend Development</h5>
+                                    <p class="card-text">We create visually stunning and user-friendly interfaces that
+                                        captivate and engage users. Our frontend developers utilize the latest
+                                        technologies to ensure responsive designs that work across all devices.</p>
+                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                            ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat other cards similarly if needed -->
+            </div>
+        </div>
+    </div>
 </div>
 
 <router-outlet></router-outlet>

@@ -1,7 +1,9 @@
 <div class="container">
 
     <div class="mb-3" align="right">
-        <button mat-raised-button routerLink="/app-route/employee">Go to employee form</button>
+
+        <button type="button" class="btn mt-2 btn-info" routerLink="/app-route/employee">Go to employee
+            list</button>
     </div>
     <table mat-table [dataSource]="datasource" class="mat-elevation-z8">
         <ng-container matColumnDef="employeeId">

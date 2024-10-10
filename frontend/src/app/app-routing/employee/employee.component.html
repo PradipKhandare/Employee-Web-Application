@@ -1,8 +1,10 @@
 <div class="container">
     <div align="right">
-        <button mat-raised-button routerLink="/app-route/employee-list">Go to employee list</button>
+        <button type="button" class="btn mt-2 btn-info" routerLink="/app-route/employee-list">Go to employee
+            list</button>
+
     </div>
-    <div class="card p-5 mt-5">
+    <div class="card p-5 mt-2">
         <form #employeeForm="ngForm" (ngSubmit)="saveEmployeeForm(employeeForm)">
             <mat-form-field appearance="outline">
                 <mat-label>Employee ID</mat-label>
@@ -28,12 +30,14 @@
                 <mat-icon matSuffix>call</mat-icon>
             </mat-form-field>
 
-            <mat-form-field>
+            <mat-form-field appearance="outline">
                 <mat-label>Select Your Department</mat-label>
                 <mat-select name="department" [(ngModel)]="employee.department">
-                    <mat-option value="IT">IT</mat-option>
-                    <mat-option value="Network">Network</mat-option>
-                    <mat-option value="Repair">Repair</mat-option>
+                    <mat-option value="Development">Development</mat-option>
+                    <mat-option value="Design">Design</mat-option>
+                    <mat-option value="DevOps">DevOps</mat-option>
+                    <mat-option value="Automation Testing">Automation Testing</mat-option>
+                    <mat-option value="Manual Testing">Manual Testing</mat-option>
                 </mat-select>
             </mat-form-field>
 
@@ -42,7 +46,7 @@
                 <mat-radio-group aria-label="Select an option">
                     <mat-radio-button [checked]="checkGender('M')" (click)="selectGender('M')"
                         value="M">M</mat-radio-button>
-                    <mat-radio-button [checked]="checkGender('F') " (click)="selectGender('F')"
+                    <mat-radio-button [checked]="checkGender('F')" (click)="selectGender('F')"
                         value="F">F</mat-radio-button>
                 </mat-radio-group>
             </div>
@@ -66,13 +70,19 @@
                         [checked]="checkSkills('Html')">Html</mat-checkbox>
                     <mat-checkbox (change)="onSkilssChanges($event)" value="CSS" class="example-margin"
                         [checked]="checkSkills('CSS')">CSS</mat-checkbox>
+                    <mat-checkbox (change)="onSkilssChanges($event)" value="Flutter" class="example-margin"
+                        [checked]="checkSkills('Flutter')">Flutter</mat-checkbox>
+                    <mat-checkbox (change)="onSkilssChanges($event)" value="Swift" class="example-margin"
+                        [checked]="checkSkills('Swift')">Swift</mat-checkbox>
+                    <mat-checkbox (change)="onSkilssChanges($event)" value="Kotlin" class="example-margin"
+                        [checked]="checkSkills('Kotlin')">Kotlin</mat-checkbox>
                 </section>
             </div>
             <mat-divider></mat-divider>
 
             <div class="text-center mt-3">
-                <button class="m-2" mat-raised-button>Clear</button>
-                <button class="btn-save m-2" mat-raised-button color="primary">Save</button>
+                <button type="button" class="btn btn-outline-danger m-2">Clear</button>
+                <button type="button" class="btn m-2 btn-outline-success">Save</button>
             </div>
         </form>
     </div>

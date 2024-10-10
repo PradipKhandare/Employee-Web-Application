@@ -1,0 +1,14 @@
+.custom-navbar {
+    background-color: #58BBFB;
+    font-family: Georgia, 'Times New Roman', Times, serif
+    /* Replace with your desired color */
+}
+
+.custom-heading {
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+.custom-search {
+    background-color: green;
+    color: black;
+}
