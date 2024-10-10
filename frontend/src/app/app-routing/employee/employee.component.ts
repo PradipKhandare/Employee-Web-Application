@@ -12,6 +12,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { EmployeeService } from '../../employee.service';
 import { error } from 'console';
 import { HttpClientModule, HttpErrorResponse } from '@angular/common/http';
+import { ActivatedRoute, Router, RouterModule, RouterOutlet } from '@angular/router';
 
 
 
@@ -19,13 +20,15 @@ import { HttpClientModule, HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-employee',
   standalone: true,
-  imports: [CommonModule, MatFormFieldModule, MatInputModule, MatIconModule, MatCheckboxModule, MatDividerModule, MatSelectModule, MatRadioModule, FormsModule, HttpClientModule],
+  imports: [CommonModule, MatFormFieldModule, MatInputModule, MatIconModule, MatCheckboxModule, MatDividerModule, MatSelectModule, MatRadioModule, FormsModule, HttpClientModule, RouterModule, RouterOutlet],
   templateUrl: './employee.component.html',
   styleUrl: './employee.component.css'
 })
 export class EmployeeComponent implements OnInit {
 
+  employee: any;
 
+  isCreateEmployee: boolean = true;
 
   checkSkills(skill: string) {
     return this.employee.skills != null && this.employee.skills.includes(skill);
@@ -33,15 +36,32 @@ export class EmployeeComponent implements OnInit {
 
 
   saveEmployeeForm(employeeForm: NgForm): void {
-    this.employeeService.saveEmployee(this.employee).subscribe({
-      next: (res: Employee) => {
-        console.log(res);
-        employeeForm.reset();
-        this.employee.gender = '';
-      }, error: (error: HttpErrorResponse) => {
-        console.log(error);
-      }
-    });
+
+
+    if (this.isCreateEmployee) {
+      this.employeeService.saveEmployee(this.employee).subscribe({
+        next: (res: Employee) => {
+          console.log(res);
+          employeeForm.reset();
+          this.employee.gender = '';
+          (<any>this.router).navigate(["/app-route/employee-list"]);
+        }, error: (error: HttpErrorResponse) => {
+          console.log(error);
+        }
+      });
+    } else {
+      this.employeeService.updateEmployee(this.employee.employeeId, this.employee).subscribe(
+        {
+          next: (res: Employee) => {
+            this.router.navigate(["/app-route/employee-list"])
+          },
+          error: (err: HttpErrorResponse) => {
+            console.log(err);
+          }
+        }
+      )
+    }
+
   }
 
   checkGender(gender: String) {
@@ -67,19 +87,23 @@ export class EmployeeComponent implements OnInit {
     this.employee.gender = employeeGender
   }
 
-  employee: Employee = {
-    employeeId: 0,
-    employeeName: "",
-    mobile: "",
-    address: "",
-    gender: "",
-    department: "",
-    skills: ""
-  }
 
-  constructor(public employeeService: EmployeeService) { }
+
+  constructor(public employeeService: EmployeeService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.employee = this.activatedRoute.snapshot.data['employee']
+    console.log(this.employee)
 
+    if (this.employee && this.employee.employeeId > 0) {
+      this.isCreateEmployee = false;
+
+      if (this.employee.skills != '') {
+        this.skills = [];
+        this.skills = this.employee.skills.split(',');
+      }
+    } else {
+      this.isCreateEmployee = true;
+    }
   }
 }

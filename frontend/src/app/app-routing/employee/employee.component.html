@@ -1,4 +1,7 @@
 <div class="container">
+    <div align="right">
+        <button mat-raised-button routerLink="/app-route/employee-list">Go to employee list</button>
+    </div>
     <div class="card p-5 mt-5">
         <form #employeeForm="ngForm" (ngSubmit)="saveEmployeeForm(employeeForm)">
             <mat-form-field appearance="outline">
@@ -39,7 +42,7 @@
                 <mat-radio-group aria-label="Select an option">
                     <mat-radio-button [checked]="checkGender('M')" (click)="selectGender('M')"
                         value="M">M</mat-radio-button>
-                    <mat-radio-button [checked]="checkGender('G') " (click)="selectGender('F')"
+                    <mat-radio-button [checked]="checkGender('F') " (click)="selectGender('F')"
                         value="F">F</mat-radio-button>
                 </mat-radio-group>
             </div>
